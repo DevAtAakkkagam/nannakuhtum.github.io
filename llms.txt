@@ -2,10 +2,11 @@
 
 > Free browser-based board games and puzzles rebuilt from ancient game traditions. No sign-up, no download, no ads. Two-player games are hotseat: both players share one screen and pass the device between turns.
 
-Aakkagam Games publishes small, fast web implementations of historic abstract games: the three-in-a-row family (three men's morris) and Archimedes' dissection puzzle. Each game is playable at a subpath of https://games.aakkagam.com/.
+Aakkagam Games publishes small, fast web implementations of historic games: an Egyptian race game, the three-in-a-row family (three men's morris), and Archimedes' dissection puzzle. Each game is playable at a subpath of https://games.aakkagam.com/.
 
 ## Games
 
+- [Senet](https://games.aakkagam.com/senet/): The ancient Egyptian race game, for two players on one device. Each player races five tokens along 30 squares laid out in three rows on a snaking (boustrophedon) path, and moves are decided by throws of four two-sided casting sticks rather than dice. Six marked houses change the rules mid-race: the House of Second Life (square 15) returns a token to the start, the House of Beauty (26) must be landed on by exact throw, the House of Waters (27) traps a token and can send it back, the Houses of Three and Two Judges (28, 29) release a token only on an exact throw of 3 or 2, and the House of Horus (30) is the exit. A token landing on a lone opponent swaps places with it; two adjacent tokens of one player cannot be taken, and three in a row form a wall that blocks passage. First player to bear off all five tokens wins. Rules follow the reconstruction published by the Oriental Institute of the University of Chicago. A round takes roughly 10 to 20 minutes.
 - [align3](https://games.aakkagam.com/align3/): Three men's morris for two players on one device. Each player has three stones on a nine-point board; place them, then slide along the lines until one player aligns all three. Includes two historically distinct variants with different win conditions:
   - Roman circle (Terni Lapilli): win on any of 4 spokes through the center, or any 3 consecutive rim points. Based on the game whose boards are scratched into Roman ruins.
   - Tamil square (kattam): win only on the 8 straight lines of a 3×3 grid (rows, columns, diagonals). Based on the Tamil pebble game drawn as a grid in the sand.
@@ -14,8 +15,9 @@ Aakkagam Games publishes small, fast web implementations of historic abstract ga
 ## Key facts
 
 - All games are free, ad-free, and require no account.
-- Games run entirely in the browser (mobile and desktop).
-- align3 is local hotseat play for exactly 2 players; ostomachion is a solo puzzle.
+- Games run entirely in the browser (mobile and desktop) and save progress only to the device.
+- Senet and align3 are local hotseat play for exactly 2 players; ostomachion is a solo puzzle.
+- Senet is a race game of partial chance, and differs from backgammon in three ways: a single snaking track of 30 squares rather than 24 points, four casting sticks rather than dice, and marked houses that alter the rules mid-race.
 - Three men's morris differs from tic-tac-toe: with only three pieces per player, play continues after placement with sliding moves, so games don't stall into automatic draws.
 
 ## Site
