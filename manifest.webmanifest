@@ -1,0 +1,61 @@
+{
+  "name": "Aakkagam Games",
+  "short_name": "Aakkagam",
+  "description": "Ancient board games rebuilt for the browser: Egyptian Senet, three men's morris, and Archimedes' ostomachion. Free, no account, no ads.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "background_color": "#faf6f0",
+  "theme_color": "#8b3a2b",
+  "categories": ["games", "entertainment", "education"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Senet",
+      "short_name": "Senet",
+      "description": "The ancient Egyptian race game, for two players",
+      "url": "/senet/"
+    },
+    {
+      "name": "align3",
+      "short_name": "align3",
+      "description": "Three men's morris on the Roman and Tamil boards",
+      "url": "/align3/"
+    },
+    {
+      "name": "Ostomachion",
+      "short_name": "Ostomachion",
+      "description": "Archimedes' fourteen-piece square puzzle",
+      "url": "/ostomachion/"
+    }
+  ]
+}

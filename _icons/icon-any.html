@@ -1,0 +1,42 @@
+<!doctype html>
+<!--
+  Source for /icon-192.png and /icon-512.png — the PWA manifest icons with
+  purpose "any". Same kattam mark as /icon.svg, rounded corners kept, corners
+  transparent so launchers that don't mask still get a proper rounded tile.
+
+  This directory is named with a leading underscore so Jekyll leaves it out of
+  the published site, the same arrangement as _og/. Do not rename it without
+  adding a robots.txt rule, and do not add a .nojekyll file to the repo root
+  without checking this first.
+
+  To regenerate after editing:
+
+    cd _icons
+    google-chrome --headless=new --disable-gpu --hide-scrollbars \
+      --default-background-color=00000000 --force-device-scale-factor=2 \
+      --screenshot=any-2x.png --window-size=512,512 file://$PWD/icon-any.html
+    magick any-2x.png -resize 512x512 -strip ../icon-512.png
+    magick any-2x.png -resize 192x192 -strip ../icon-192.png
+    rm any-2x.png
+
+  Rendered at 2x and downscaled so the hairline board strokes stay crisp, the
+  same reason og.png is made that way.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>icon (any)</title>
+  <style>
+    html, body { margin: 0; padding: 0; background: transparent; }
+    svg { display: block; width: 100vw; height: 100vh; }
+  </style>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+    <rect width="12" height="12" rx="2" fill="#8b3a2b"/>
+    <g stroke="#faf6f0" stroke-width=".7" fill="none">
+      <path d="M2.5 2.5h7v7h-7zM2.5 2.5l7 7M9.5 2.5l-7 7M6 2.5v7M2.5 6h7"/>
+    </g>
+  </svg>
+</body>
+</html>

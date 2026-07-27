@@ -1,0 +1,51 @@
+<!doctype html>
+<!--
+  Source for /icon-maskable-512.png (manifest purpose "maskable") and
+  /apple-touch-icon.png.
+
+  Two differences from icon-any.html, both required by masking: the plate is
+  full-bleed with square corners, because the launcher supplies its own shape
+  and crops whatever sits outside it; and the board is scaled to 90% about the
+  centre. That second bit is the safe-zone rule — a maskable icon may only be
+  trusted to show the inner circle of 80% diameter. The board spans 2.5..9.5 of
+  12, so 58% of the width; its corners sit on a circle of 58% x sqrt(2) = 82.5%
+  diameter, just outside the safe zone. At 90% that drops to 74% and clears.
+
+  This directory is named with a leading underscore so Jekyll leaves it out of
+  the published site, the same arrangement as _og/. Do not rename it without
+  adding a robots.txt rule, and do not add a .nojekyll file to the repo root
+  without checking this first.
+
+  To regenerate after editing:
+
+    cd _icons
+    google-chrome --headless=new --disable-gpu --hide-scrollbars \
+      --force-device-scale-factor=2 --screenshot=maskable-2x.png \
+      --window-size=512,512 file://$PWD/icon-maskable.html
+    magick maskable-2x.png -resize 512x512 -strip ../icon-maskable-512.png
+    magick maskable-2x.png -resize 180x180 -strip ../apple-touch-icon.png
+    rm maskable-2x.png
+
+  apple-touch-icon.png shares this source because iOS also crops to its own
+  rounded-square mask and ignores transparency, so the padded full-bleed plate
+  is exactly what it wants.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>icon (maskable)</title>
+  <style>
+    html, body { margin: 0; padding: 0; background: #8b3a2b; }
+    svg { display: block; width: 100vw; height: 100vh; }
+  </style>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+    <rect width="12" height="12" fill="#8b3a2b"/>
+    <g stroke="#faf6f0" stroke-width=".7" fill="none"
+       transform="translate(6 6) scale(.9) translate(-6 -6)">
+      <path d="M2.5 2.5h7v7h-7zM2.5 2.5l7 7M9.5 2.5l-7 7M6 2.5v7M2.5 6h7"/>
+    </g>
+  </svg>
+</body>
+</html>

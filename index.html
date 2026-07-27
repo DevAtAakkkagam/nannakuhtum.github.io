@@ -10,6 +10,8 @@
   <link rel="alternate" hreflang="en" href="https://games.aakkagam.com/">
   <link rel="alternate" hreflang="x-default" href="https://games.aakkagam.com/">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#8b3a2b">
 
@@ -537,5 +539,50 @@
       <p><a href="https://aakkagam.com/">Aakkagam</a> Games &middot; <a href="/senet/">Senet</a> &middot; <a href="/align3/">align3</a> &middot; <a href="/ostomachion/">ostomachion</a> &middot; <a href="mailto:admin@aakkagam.com?subject=Feedback%20from%20Aakkagam%20Games%20landing%20page">Feedback</a> &middot; Free and open, built for playing face to face.</p>
     </footer>
   </main>
+
+  <!--
+    Registers the site-wide service worker that makes Aakkagam Games work
+    offline. The worker is /sw.js at the origin root, and its scope is the whole
+    origin, so it serves the games at /align3/, /ostomachion/ and /senet/ as
+    well. The
+    same block appears in each game's index.html, so that a visitor arriving
+    there directly is covered too; see sw.js for why one worker rather than
+    three, and for the caching strategies that keep it updatable.
+  -->
+  <script>
+    (function () {
+      if (!('serviceWorker' in navigator)) return;
+      window.addEventListener('load', function () {
+        navigator.serviceWorker
+          .register('/sw.js', { scope: '/', updateViaCache: 'none' })
+          .then(function (registration) {
+            registration.update();
+            return navigator.serviceWorker.ready;
+          })
+          .then(function () {
+            // Nothing this page loaded went through the worker, because the
+            // worker did not exist when the page was fetched. Hand it the list
+            // so this visit is enough to make the page work offline, rather
+            // than the next one.
+            var warm = function () {
+              if (!navigator.serviceWorker.controller) return;
+              navigator.serviceWorker.controller.postMessage({
+                type: 'WARM',
+                page: location.href,
+                urls: performance.getEntriesByType('resource').map(function (entry) {
+                  return entry.name;
+                })
+              });
+            };
+            if (navigator.serviceWorker.controller) warm();
+            else navigator.serviceWorker.addEventListener('controllerchange', warm, { once: true });
+            // Again once late webfont subsets have settled. Already-cached URLs
+            // are skipped, so the second pass costs almost nothing.
+            window.setTimeout(warm, 2000);
+          })
+          .catch(function () { /* offline support is optional; never block the page */ });
+      });
+    })();
+  </script>
 </body>
 </html>
