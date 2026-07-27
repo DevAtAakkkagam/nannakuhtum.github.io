@@ -1,0 +1,120 @@
+<!doctype html>
+<!--
+  Source for /og.png (1200x630 social share card).
+
+  This directory is named with a leading underscore so Jekyll leaves it out of
+  the published site. Do not rename it without adding a robots.txt rule, and do
+  not add a .nojekyll file to the repo root without checking this first.
+
+  To regenerate after editing:
+
+    cd _og
+    google-chrome --headless=new --disable-gpu --hide-scrollbars \
+      --force-device-scale-factor=2 --screenshot=og-2x.png \
+      --window-size=1200,630 file://$PWD/og-source.html
+    magick og-2x.png -resize 1200x630 -strip ../og.png
+    rm og-2x.png
+
+  Rendered at 2x and downscaled so the hairline board strokes stay crisp.
+
+  Font note: the page itself asks for Georgia, which most visitors have. Linux
+  build machines usually do not, so this file names Bitstream Charter first.
+  Charter is the closest installed match to Georgia's sturdy, large-x-height
+  text serif. If neither is present the card will render in a Times clone and
+  look wrong; install one before regenerating.
+
+  The board is the Senet board, drawn in the same line language and glyph
+  vocabulary as the one on the landing page (which in turn borrows from the
+  Senet game's own Board.svelte). Keep the three in sync.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>og.png source: Aakkagam Games</title>
+<style>
+  :root {
+    --ink: #2b2320;
+    --paper: #faf6f0;
+    --accent: #8b3a2b;
+    --muted: #6b5f58;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Bitstream Charter', Georgia, serif;
+    padding: 74px 72px;
+    display: flex;
+    flex-direction: column;
+  }
+  .wordmark {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+  }
+  .sub {
+    font-size: 29px;
+    color: var(--muted);
+    margin-top: 14px;
+  }
+  svg { display: block; width: 100%; height: auto; margin-top: 46px; }
+</style>
+</head>
+<body>
+  <div class="wordmark">Aakkagam Games</div>
+  <div class="sub">Free ancient board games and puzzles, played in the browser.</div>
+
+  <svg viewBox="-1 -1 142 44">
+    <g fill="none" stroke="var(--ink)" stroke-linejoin="round" stroke-linecap="round">
+      <rect x="0" y="0" width="140" height="42" rx="1.6" stroke-width="0.55"/>
+      <g stroke-width="0.4">
+        <path d="M14,0V42 M28,0V42 M42,0V42 M56,0V42 M70,0V42 M84,0V42 M98,0V42 M112,0V42 M126,0V42"/>
+        <path d="M0,14H140 M0,28H140"/>
+        <!-- the reverse-S turns, hinted inside the square the path drops into -->
+        <path d="M131.1,15.7 L133,17.9 L134.9,15.7"/>
+        <path d="M5.1,29.7 L7,31.9 L8.9,29.7"/>
+      </g>
+      <!-- the six marked houses, in the game's own carved vocabulary -->
+      <g stroke-width="0.52">
+        <!-- 15, House of Second Life -->
+        <g transform="translate(77 21)">
+          <circle cy="-1.6" r="1.8"/>
+          <path d="M0,0.4V4 M-1.9,1.5H1.9"/>
+        </g>
+        <!-- 26, House of Beauty: a cut diamond -->
+        <path d="M77,31.6 L79.7,35 L77,38.4 L74.3,35 Z"/>
+        <!-- 27, House of Waters: two water zigzags -->
+        <g transform="translate(91 35)">
+          <path d="M-3.5,-1.4 l1.75,-1.5 l1.75,1.5 l1.75,-1.5 l1.75,1.5"/>
+          <path d="M-3.5,1.8 l1.75,-1.5 l1.75,1.5 l1.75,-1.5 l1.75,1.5"/>
+        </g>
+        <!-- 28, House of Three Judges -->
+        <g transform="translate(105 35)">
+          <path d="M-2.2,-2.6V2.6 M0,-2.6V2.6 M2.2,-2.6V2.6"/>
+        </g>
+        <!-- 29, House of Two Judges -->
+        <g transform="translate(119 35)">
+          <path d="M-1.3,-2.6V2.6 M1.3,-2.6V2.6"/>
+        </g>
+        <!-- 30, House of Horus: the sun disc -->
+        <circle cx="133" cy="35" r="2.6"/>
+      </g>
+    </g>
+    <circle cx="133" cy="35" r="0.75" fill="var(--accent)"/>
+    <!-- a race in progress: cones against spools -->
+    <g fill="var(--accent)">
+      <path d="M49,4 L51.8,10 L46.2,10 Z"/>
+      <path d="M119,18 L121.8,24 L116.2,24 Z"/>
+      <path d="M21,18 L23.8,24 L18.2,24 Z"/>
+    </g>
+    <g fill="var(--paper)" stroke="var(--ink)" stroke-width="0.52">
+      <circle cx="91" cy="7" r="2.5"/>
+      <circle cx="63" cy="21" r="2.5"/>
+      <circle cx="21" cy="35" r="2.5"/>
+    </g>
+  </svg>
+</body>
+</html>
