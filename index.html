@@ -74,7 +74,15 @@
         "isAccessibleForFree": true,
         "inLanguage": "en",
         "author": { "@id": "https://games.aakkagam.com/#org" },
-        "publisher": { "@id": "https://games.aakkagam.com/#org" }
+        "publisher": { "@id": "https://games.aakkagam.com/#org" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://games.aakkagam.com/patolli/"
+        },
+        "isPartOf": { "@id": "https://games.aakkagam.com/#website" }
       },
       {
         "@type": "VideoGame",
@@ -174,6 +182,14 @@
         "@id": "https://games.aakkagam.com/#faq",
         "mainEntity": [
           {
+              "@type": "Question",
+              "name": "What is Patolli?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Patolli is a Mesoamerican race game for two players. Each player races six counters around a cross of sixty squares, moving by throws of five beans marked on one face. Nothing is ever captured: a counter may not land on an occupied square, so blocking your opponent out is the whole of the strategy. This version follows R. C. Bell's sixty-square reconstruction, which differs from the fifty-two-square version with captures described in most popular accounts."
+              }
+            },
+            {
             "@type": "Question",
             "name": "What is Senet?",
             "acceptedAnswer": {
@@ -218,7 +234,7 @@
             "name": "Do I need an account or app to play?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. Every game here runs directly in the browser with no download, no sign-up, and no ads. Open the game link on a phone, tablet, or computer. Senet and align3 are two-player games: set the device between you and take turns. Ostomachion is a puzzle for one."
+              "text": "No. Every game here runs directly in the browser with no download, no sign-up, and no ads. Open the game link on a phone, tablet, or computer. Senet, Patolli and align3 are two-player games: set the device between you and take turns. Ostomachion is a puzzle for one."
             }
           },
           {
@@ -598,6 +614,8 @@
     <section class="prose" aria-labelledby="faq">
       <h2 id="faq">Frequently Asked Questions</h2>
       <dl>
+        <dt>What is Patolli?</dt>
+        <dd>Patolli is a Mesoamerican race game for two players. Each player races six counters around a cross of sixty squares, moving by throws of five beans marked on one face. Nothing is ever captured: a counter may not land on an occupied square, so blocking your opponent out is the whole of the strategy. This version follows R. C. Bell's sixty-square reconstruction, which differs from the fifty-two-square version with captures described in most popular accounts.</dd>
         <dt>What is Senet?</dt>
         <dd>An ancient Egyptian race game and one of the oldest board games known, played for more than two thousand years. Two players race five tokens each along thirty squares in three rows, moving by throws of four two-sided casting sticks. Boards survive in tomb paintings and among Tutankhamun's burial goods.</dd>
 
@@ -614,7 +632,7 @@
         <dd>An ancient Greek dissection puzzle (also spelled stomachion, sometimes called the loculus of Archimedes): a square cut into 14 flat pieces. Archimedes wrote a treatise about it, one of the earliest known mathematical studies of a puzzle. In 2003 mathematicians counted 17,152 distinct ways to rebuild the square.</dd>
 
         <dt>Do I need an account or app to play?</dt>
-        <dd>No. Every game runs directly in the browser with no download, no sign-up, and no ads. Open the link on any device. Senet and align3 are two-player games, so set the device between you and take turns. Ostomachion is a puzzle for one.</dd>
+        <dd>No. Every game runs directly in the browser with no download, no sign-up, and no ads. Open the link on any device. Senet, Patolli and align3 are two-player games, so set the device between you and take turns. Ostomachion is a puzzle for one.</dd>
 
         <dt>How is three men's morris different from tic-tac-toe?</dt>
         <dd>Tic-tac-toe ends after placement and usually draws. In three men's morris each player has just three pieces, so play continues after placement: pieces slide along the lines every turn until one player forms a line of three.</dd>
@@ -622,7 +640,7 @@
     </section>
 
     <footer>
-      <p><a href="https://aakkagam.com/">Aakkagam</a> Games &middot; <a href="/senet/">Senet</a> &middot; <a href="/align3/">align3</a> &middot; <a href="/ostomachion/">ostomachion</a> &middot; <a href="mailto:admin@aakkagam.com?subject=Feedback%20from%20Aakkagam%20Games%20landing%20page">Feedback</a> &middot; Free and open, built for playing face to face.</p>
+      <p><a href="https://aakkagam.com/">Aakkagam</a> Games &middot; <a href="/patolli/">Patolli</a> &middot; <a href="/senet/">Senet</a> &middot; <a href="/align3/">align3</a> &middot; <a href="/ostomachion/">ostomachion</a> &middot; <a href="mailto:admin@aakkagam.com?subject=Feedback%20from%20Aakkagam%20Games%20landing%20page">Feedback</a> &middot; Free and open, built for playing face to face.</p>
     </footer>
   </main>
 
