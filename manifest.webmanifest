@@ -11,7 +11,11 @@
   "dir": "ltr",
   "background_color": "#faf6f0",
   "theme_color": "#8b3a2b",
-  "categories": ["games", "entertainment", "education"],
+  "categories": [
+    "games",
+    "entertainment",
+    "education"
+  ],
   "icons": [
     {
       "src": "/icon-192.png",
@@ -39,6 +43,10 @@
     }
   ],
   "shortcuts": [
+    {
+      "name": "Patolli",
+      "url": "/patolli/"
+    },
     {
       "name": "Senet",
       "short_name": "Senet",

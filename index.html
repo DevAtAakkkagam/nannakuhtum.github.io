@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Free Ancient Board Games Online: Senet, Morris | Aakkagam Games</title>
-  <meta name="description" content="Play ancient board games free in your browser: Egyptian Senet, three men's morris (Terni Lapilli, Tamil kattam), and Archimedes' ostomachion puzzle. No sign-up.">
+  <title>Free Ancient Board Games Online: Senet, Patolli, Morris | Aakkagam Games</title>
+  <meta name="description" content="Play ancient board games free in your browser: Egyptian Senet, Mesoamerican Patolli, three men's morris (Terni Lapilli, Tamil kattam), and Archimedes' ostomachion puzzle. No sign-up.">
   <link rel="canonical" href="https://games.aakkagam.com/">
   <link rel="alternate" hreflang="en" href="https://games.aakkagam.com/">
   <link rel="alternate" hreflang="x-default" href="https://games.aakkagam.com/">
@@ -18,8 +18,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Aakkagam Games">
-  <meta property="og:title" content="Three Ancient Board Games, Free in Your Browser | Aakkagam Games">
-  <meta property="og:description" content="Senet from Egypt, three men's morris from Rome and Tamil Nadu, and Archimedes' fourteen-piece square. Two thousand years of play, free, with no account and no ads.">
+  <meta property="og:title" content="Four Ancient Board Games, Free in Your Browser | Aakkagam Games">
+  <meta property="og:description" content="Senet from Egypt, Patolli from Mesoamerica, three men's morris from Rome and Tamil Nadu, and Archimedes' fourteen-piece square. Two thousand years of play, free, with no account and no ads.">
   <meta property="og:url" content="https://games.aakkagam.com/">
   <meta property="og:image" content="https://games.aakkagam.com/og.png">
   <meta property="og:image:width" content="1200">
@@ -29,8 +29,8 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://games.aakkagam.com/og.png">
-  <meta name="twitter:title" content="Three Ancient Board Games, Free in Your Browser | Aakkagam Games">
-  <meta name="twitter:description" content="Play Egyptian Senet, Terni Lapilli, Tamil kattam, and Archimedes' ostomachion free in your browser, with no sign-up and no ads.">
+  <meta name="twitter:title" content="Four Ancient Board Games, Free in Your Browser | Aakkagam Games">
+  <meta name="twitter:description" content="Play Egyptian Senet, Mesoamerican Patolli, Terni Lapilli, Tamil kattam, and Archimedes' ostomachion free in your browser, with no sign-up and no ads.">
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -51,6 +51,29 @@
         "url": "https://games.aakkagam.com/",
         "name": "Aakkagam Games",
         "description": "Free browser-based board games and puzzles rebuilt from ancient game traditions: race games, three-in-a-row games, and dissection puzzles.",
+        "publisher": { "@id": "https://games.aakkagam.com/#org" }
+      },
+      {
+        "@type": "VideoGame",
+        "@id": "https://games.aakkagam.com/patolli/#game",
+        "name": "Patolli",
+        "alternateName": ["Patolli board game", "Aztec Patolli"],
+        "url": "https://games.aakkagam.com/patolli/",
+        "image": "https://games.aakkagam.com/patolli/og.png",
+        "description": "A free browser version of Patolli, the Mesoamerican cross-board race game: sixty squares in a cross, six pieces a side, five marked beans for dice. Two players on one device, following R. C. Bell's reconstruction.",
+        "genre": "Board game",
+        "playMode": "MultiPlayer",
+        "numberOfPlayers": {
+          "@type": "QuantitativeValue",
+          "minValue": 2,
+          "maxValue": 2
+        },
+        "gamePlatform": "Web browser",
+        "applicationCategory": "Game",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "inLanguage": "en",
+        "author": { "@id": "https://games.aakkagam.com/#org" },
         "publisher": { "@id": "https://games.aakkagam.com/#org" }
       },
       {
@@ -290,12 +313,18 @@
       height: auto;
       color: var(--ink);
     }
+    .board--patolli { max-width: 18rem; }
     .board--align3 { max-width: 22rem; }
     .board--osto { max-width: 15rem; }
 
     /* Stroke weights are held near-constant in rendered pixels as the senet
        board scales from a phone to a wide screen; the other two boards are
        width-capped, so they need only one value. */
+    .board--patolli { --sw-frame: 1.5; --sw-grid: 0.9; --sw-mark: 1.1; }
+    .board--patolli .frame { stroke-width: var(--sw-frame); }
+    .board--patolli .grid  { stroke-width: var(--sw-grid); }
+    .board--patolli .marks { stroke-width: var(--sw-mark); }
+    .board--patolli .tile  { stroke-width: var(--sw-mark); }
     .board--senet { --sw-frame: 0.70; --sw-grid: 0.50; --sw-mark: 0.62; }
     .board--senet .frame { stroke-width: var(--sw-frame); }
     .board--senet .grid  { stroke-width: var(--sw-grid); }
@@ -366,6 +395,11 @@
       .game--senet .game-body { grid-column: 2; grid-row: 2; }
 
       /* align3: two boards at 2:1, set beside the text. */
+      .game--patolli { grid-template-columns: 18rem 1fr; }
+      .game--patolli .board     { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
+      .game--patolli .game-id   { grid-column: 2; grid-row: 1; }
+      .game--patolli .game-body { grid-column: 2; grid-row: 2; }
+
       .game--align3 { grid-template-columns: 22rem 1fr; }
       .game--align3 .board     { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
       .game--align3 .game-id   { grid-column: 2; grid-row: 1; }
@@ -386,10 +420,62 @@
 <body>
   <main>
     <header class="masthead">
-      <p class="brand-line">Four boards. Three games. Two thousand years of play.</p>
+      <p class="brand-line">Five boards. Four games. Two thousand years of play.</p>
       <h1>Ancient Board Games and Puzzles, Free in Your Browser</h1>
-      <p class="tagline">Rome &middot; Tamil Nadu &middot; Greece &middot; Egypt. No account, no ads, nothing to install.</p>
+      <p class="tagline">Mesoamerica &middot; Rome &middot; Tamil Nadu &middot; Greece &middot; Egypt. No account, no ads, nothing to install.</p>
     </header>
+
+    <article class="game game--patolli" aria-labelledby="patolli">
+      <svg class="board board--patolli" viewBox="-1 -1 162 162" aria-hidden="true" focusable="false">
+        <g fill="none" stroke="currentColor" stroke-linejoin="round">
+          <!-- the cross: four arms of two files by seven ranks, on a central 2x2 -->
+          <path class="frame" d="M70,0 H90 V70 H160 V90 H90 V160 H70 V90 H0 V70 H70 Z"/>
+          <g class="grid">
+            <path d="M80,0V160 M0,70H160 M0,80H160 M70,0V160"/>
+            <path d="M70,10H90 M70,20H90 M70,30H90 M70,40H90 M70,50H90 M70,60H90"/>
+            <path d="M70,100H90 M70,110H90 M70,120H90 M70,130H90 M70,140H90 M70,150H90"/>
+            <path d="M10,70V90 M20,70V90 M30,70V90 M40,70V90 M50,70V90 M60,70V90"/>
+            <path d="M100,70V90 M110,70V90 M120,70V90 M130,70V90 M140,70V90 M150,70V90"/>
+          </g>
+          <!-- the eight wedge squares, which cost double -->
+          <g class="marks">
+            <path d="M72,40 L78,40 L75,45 Z" fill="currentColor" stroke="none"/>
+            <path d="M82,40 L88,40 L85,45 Z" fill="currentColor" stroke="none"/>
+            <path d="M72,120 L78,120 L75,115 Z" fill="currentColor" stroke="none"/>
+            <path d="M82,120 L88,120 L85,115 Z" fill="currentColor" stroke="none"/>
+            <path d="M40,72 L40,78 L45,75 Z" fill="currentColor" stroke="none"/>
+            <path d="M40,82 L40,88 L45,85 Z" fill="currentColor" stroke="none"/>
+            <path d="M120,72 L120,78 L115,75 Z" fill="currentColor" stroke="none"/>
+            <path d="M120,82 L120,88 L115,85 Z" fill="currentColor" stroke="none"/>
+            <!-- the entry pinwheel at the centre, which encodes the track -->
+            <path d="M85,62 L88,65 L85,68 L82,65 Z"/>
+            <path d="M62,75 L65,72 L68,75 L65,78 Z"/>
+            <path d="M75,98 L72,95 L75,92 L78,95 Z"/>
+            <path d="M98,85 L95,88 L92,85 L95,82 Z"/>
+          </g>
+        </g>
+        <!-- a race in progress: discs against tiles, and nothing ever captured -->
+        <g fill="var(--accent)">
+          <circle cx="75" cy="25" r="3.4"/>
+          <circle cx="75" cy="35" r="3.4"/>
+          <circle cx="145" cy="85" r="3.4"/>
+        </g>
+        <g class="tile" fill="var(--paper)" stroke="currentColor">
+          <rect x="11.6" y="71.6" width="6.8" height="6.8" rx="0.8"/>
+          <rect x="81.6" y="141.6" width="6.8" height="6.8" rx="0.8"/>
+          <rect x="101.6" y="81.6" width="6.8" height="6.8" rx="0.8"/>
+        </g>
+      </svg>
+      <div class="game-id">
+        <h2 id="patolli">Patolli</h2>
+        <p class="meta">Mesoamerica &middot; two players &middot; about 15 minutes</p>
+      </div>
+      <div class="game-body">
+        <p>Race six counters around a cross of sixty squares, throwing five marked beans to move. Nothing is ever captured here: a counter may never land on an occupied square, whoever owns it, so every piece is safe where it stands and the whole of the strategy is shutting your opponent out. A row of counters closes a path, wedge-marked squares make some ground expensive to hold, and a piece leaves the board only on an exact throw.</p>
+        <p>Patolli was played across Mesoamerica for well over a thousand years, and Spanish chroniclers describe it at the Aztec court, where players wagered heavily on the result. This version follows the sixty-square reconstruction R. C. Bell published in <em>Board and Table Games</em>, which is a different game from the fifty-two-square version with captures described in most popular accounts.</p>
+        <a class="play" href="/patolli/">Play Patolli free</a>
+      </div>
+    </article>
 
     <article class="game game--senet" aria-labelledby="senet">
       <svg class="board board--senet" viewBox="-1 -1 142 44" aria-hidden="true" focusable="false">
